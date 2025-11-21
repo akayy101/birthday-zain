@@ -1,0 +1,63 @@
+#ending-section {
+  padding: 100px 10%;
+  background: #fff8e1;
+  color: #473400;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.ending-content {
+  max-width: 700px;
+  margin: auto;
+  font-family: 'Caveat', cursive;
+}
+
+.ending-content h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3rem;
+  margin-bottom: 30px;
+  color: #ffb700;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.ending-content p {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.signature {
+  font-size: 1.6rem;
+  margin-top: 30px;
+}
+
+/* Simple confetti animation */
+.confetti span {
+  position: absolute;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: #ffd966;
+  top: -10px;
+  animation: fall 5s linear infinite;
+  opacity: 0.7;
+  border-radius: 50%;
+}
+
+.confetti span:nth-child(1) { left: 10%; animation-delay: 0s; }
+.confetti span:nth-child(2) { left: 20%; animation-delay: 0.5s; }
+.confetti span:nth-child(3) { left: 30%; animation-delay: 1s; }
+.confetti span:nth-child(4) { left: 40%; animation-delay: 1.5s; }
+.confetti span:nth-child(5) { left: 50%; animation-delay: 2s; }
+.confetti span:nth-child(6) { left: 60%; animation-delay: 2.5s; }
+.confetti span:nth-child(7) { left: 70%; animation-delay: 3s; }
+.confetti span:nth-child(8) { left: 80%; animation-delay: 3.5s; }
+.confetti span:nth-child(9) { left: 90%; animation-delay: 4s; }
+.confetti span:nth-child(10){ left: 95%; animation-delay: 4.5s; }
+
+@keyframes fall {
+  0% { top: -10px; transform: rotate(0deg); }
+  50% { transform: rotate(180deg); }
+  100% { top: 100%; transform: rotate(360deg); }
+}

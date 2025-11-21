@@ -1,0 +1,42 @@
+#poetry-section {
+  padding: 80px 10%;
+  background: #fff8e1;
+  color: #473400;
+  text-align: center;
+}
+
+#poetry-section h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.8rem;
+  margin-bottom: 50px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.poems-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.poem-card {
+  background: #fffbe6;
+  padding: 30px 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  width: 300px;
+  text-align: left;
+  font-family: 'Caveat', cursive;
+}
+
+.poem-card h3 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.poem-card pre {
+  font-family: 'Caveat', cursive;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  white-space: pre-wrap;
+}
