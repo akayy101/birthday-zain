@@ -17,6 +17,7 @@ const Hero = () => {
 
   return (
     <section id="hero">
+     <div className="hero-content">
       {/* Floating Cake */}
       <motion.img
         src=""
@@ -58,6 +59,7 @@ const Hero = () => {
         <audio id="birthday-audio" src="birthdaySong" autoPlay />
         // replace src with birthdaySong if you have it
       )}
+      </div>
     </section>
   );
 };
