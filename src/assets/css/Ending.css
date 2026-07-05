@@ -12,18 +12,12 @@
 }
 
 .ending-line {
-  max-width: 34ch;
+  max-width: 40ch;
   font-family: var(--font-display);
   font-size: clamp(1.15rem, 1rem + 0.9vw, 1.7rem);
   line-height: 1.55;
   color: #f3e6c8;
   margin-bottom: 26px;
-}
-
-.ending-line--small {
-  font-style: italic;
-  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.2rem);
-  color: #c9b48b;
 }
 
 .ending-signature {

@@ -30,11 +30,9 @@ const Ending = () => {
           turning twenty-six.
         </motion.p>
         <motion.p className="ending-line" variants={lineVariants}>
-          It's about the fact that you've quietly made my life better for six
-          years, without ever once asking for anything back.
-        </motion.p>
-        <motion.p className="ending-line ending-line--small" variants={lineVariants}>
-          Germany, Pakistan — it was never going to be the distance that decided this.
+          It's about six years of you being annoyingly consistent — showing up,
+          listening all the way through, never turning any of it into a bigger
+          deal than it needed to be. Someone should probably mention that.
         </motion.p>
         <motion.p className="signature ending-signature" variants={lineVariants}>
           — Ariba
