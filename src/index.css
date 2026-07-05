@@ -1,10 +1,188 @@
-/* Reset margins and ensure full viewport width */
-html, body, #root {
+/* ============================================================
+   Design tokens — Zain, 26
+   Warm gold on parchment. One accent, used like a spotlight.
+   ============================================================ */
+:root {
+  /* palette */
+  --ink: #3a2e22;
+  --ink-soft: #6b5940;
+  --ink-faint: #8f7d64;
+
+  --paper: #f3ead7;
+  --paper-deep: #e9dcc0;
+  --paper-panel: #f8f1e2;
+  --paper-dark: #2a2016;
+
+  --gold: #c9932e;
+  --gold-deep: #a8762a;
+  --gold-soft: rgba(201, 147, 46, 0.16);
+
+  --olive: #8c7a45;
+  --ember: #b85c2e;
+
+  --line: rgba(58, 46, 34, 0.16);
+  --line-strong: rgba(58, 46, 34, 0.28);
+  --shadow-soft: rgba(58, 46, 34, 0.14);
+  --shadow-deep: rgba(20, 15, 8, 0.45);
+
+  /* type */
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-hand: "Caveat", cursive;
+  --font-hand-flourish: "Homemade Apple", cursive;
+  --font-sans: "Manrope", "Segoe UI", -apple-system, sans-serif;
+
+  --step-caption: clamp(0.72rem, 0.68rem + 0.1vw, 0.8rem);
+  --step-body: clamp(1rem, 0.95rem + 0.15vw, 1.125rem);
+  --step-lead: clamp(1.2rem, 1.1rem + 0.3vw, 1.4rem);
+  --step-h3: clamp(1.5rem, 1.3rem + 0.7vw, 2rem);
+  --step-h2: clamp(2.1rem, 1.7rem + 1.6vw, 3.2rem);
+  --step-h1: clamp(2.8rem, 2rem + 3.2vw, 5.4rem);
+
+  --measure: 62ch;
+  --container: 1180px;
+
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
   width: 100%;
-  height: 100%;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  overflow-x: hidden;  /* prevent horizontal scroll */
-  font-family: 'Poppins', sans-serif; /* optional */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: var(--step-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+/* a whisper of film grain over the whole site */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.045;
+  mix-blend-mode: multiply;
+  background-image: repeating-radial-gradient(circle at 0 0, #000 0, transparent 1px);
+  background-size: 3px 3px;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  margin: 0;
+  text-wrap: balance;
+  color: var(--ink);
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  font-family: var(--font-sans);
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+/* ---------- shared utility classes ---------- */
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 clamp(20px, 6vw, 72px);
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--step-caption);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  font-weight: 600;
+}
+
+.chapter-heading {
+  font-size: var(--step-h2);
+  line-height: 1.08;
+}
+
+.chapter-heading em {
+  font-style: italic;
+  color: var(--gold-deep);
+}
+
+.rule {
+  width: 56px;
+  height: 2px;
+  background: var(--gold);
+  border: none;
+}
+
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  color: var(--ink);
+  border: 1.5px solid var(--gold-deep);
+  padding: 14px 30px;
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: background 0.4s var(--ease-soft), color 0.4s var(--ease-soft), box-shadow 0.4s var(--ease-soft);
+}
+
+.btn-gold:hover {
+  background: var(--gold-deep);
+  color: var(--paper-panel);
+  box-shadow: 0 6px 22px var(--shadow-soft);
+}
+
+.btn-gold:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid var(--gold-deep);
+  outline-offset: 3px;
+}
+
+.signature {
+  font-family: var(--font-hand-flourish);
+  font-size: 1.9rem;
+  color: var(--gold-deep);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }

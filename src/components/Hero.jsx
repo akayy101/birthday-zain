@@ -1,65 +1,81 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import '../assets/css/Hero.css';
-import cakeImg from '../assets/images/cake.jpg'; // uncomment when you have your image
-import birthdaySong from '../assets/audios/birthday.mp3'; // optional
+import cakeImg from '../assets/images/cake.jpg';
+import birthdaySong from '../assets/audios/birthday.mp3';
 
 const Hero = () => {
-  const [playMusic, setPlayMusic] = useState(false);
+  const audioRef = useRef(null);
+  const [started, setStarted] = useState(false);
 
   const handleStart = () => {
-    setPlayMusic(true);
-    // play audio if you have it
-    const audio = document.getElementById('birthday-audio');
-    audio.play();
+    setStarted(true);
+    audioRef.current?.play().catch(() => {});
     document.getElementById('letter-section')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
     <section id="hero">
-     <div className="hero-content">
-      {/* Floating Cake */}
-      <motion.img
-        src=""
-        alt="Cake"
-        style={{ marginBottom: '30px' }}
-        animate={{ y: [0, -20, 0] }}
-        transition={{ repeat: Infinity, duration: 2 }}
+      <div className="hero-glow" aria-hidden="true" />
+      <div className="hero-vignette" aria-hidden="true" />
+
+      <motion.div
+        className="hero-cake"
+        animate={{ y: [0, -16, 0] }}
+        transition={{ repeat: Infinity, duration: 5, ease: 'easeInOut' }}
+      >
+        <img src={cakeImg} alt="" />
+      </motion.div>
+
+      <div className="hero-content">
+        <motion.span
+          className="eyebrow hero-eyebrow"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.2 }}
+        >
+          For Zain — Twenty-Six
+        </motion.span>
+
+        <motion.h1
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+        >
+          A year, <em>gathered</em><br />and given back to you.
+        </motion.h1>
+
+        <motion.p
+          className="hero-sub"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.2, delay: 0.9 }}
+        >
+          Not a birthday page. A few things I never said out loud, kept for the day you'd actually sit still and read them.
+        </motion.p>
+
+        <motion.button
+          className="btn-gold hero-btn"
+          onClick={handleStart}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1.3 }}
+          whileHover={{ letterSpacing: '0.22em' }}
+        >
+          Begin
+        </motion.button>
+      </div>
+
+      <motion.div
+        className="hero-scrollcue"
+        animate={{ opacity: [0.35, 1, 0.35] }}
+        transition={{ repeat: Infinity, duration: 2.4, ease: 'easeInOut' }}
+        aria-hidden="true"
       />
 
-      {/* Heading */}
-      <motion.h1
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-      >
-        Happy 26th Birthday, Zain
-      </motion.h1>
-
-      {/* Paragraph */}
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 2, delay: 0.5 }}
-      >
-        A golden year for the golden soul. Scroll to begin your journey.
-      </motion.p>
-
-      {/* Start Button */}
-      <motion.button
-        onClick={handleStart}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
-      >
-        Start
-      </motion.button>
-
-      {/* Optional Audio */}
-      {playMusic && (
-        <audio id="birthday-audio" src="birthdaySong" autoPlay />
-        // replace src with birthdaySong if you have it
+      {started && (
+        <audio ref={audioRef} src={birthdaySong} loop />
       )}
-      </div>
     </section>
   );
 };

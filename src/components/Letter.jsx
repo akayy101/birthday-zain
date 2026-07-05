@@ -6,25 +6,45 @@ import '../assets/css/Letter.css';
 const Letter = () => {
   return (
     <section id="letter-section">
+      <div className="letter-backdrop" aria-hidden="true" />
       <motion.div
         className="letter-container"
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 34 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
       >
-        <h2>A Letter For You</h2>
-        <p>
-          Dear Zain,
-          <br /><br />
-          This is where your emotional and funny birthday letter goes. You can write about your memories together, his goofy personality, travels, and all the things that make him special.
-          <br /><br />
-          I hope this letter reminds you how much you mean to me and how amazing your 26th year will be. Keep being the calm, patient, artistic soul we all love!
-          <br /><br />
-          With love,
-          <br />
-          Ariba
-        </p>
-        <p className="signature">— Ariba</p>
+        <span className="eyebrow letter-eyebrow">Chapter One</span>
+        <h2 className="letter-title">The Letter</h2>
+
+        <div className="letter-page">
+          <p className="letter-body">
+            Dear Zain,
+            <br /><br />
+            Six years ago you were just a friend. Somewhere along the way, without either
+            of us really deciding it, you became the closest thing I have to an elder
+            brother — the one who stays calm when I'm not, who listens all the way through
+            before saying anything back.
+            <br /><br />
+            There's an entire country between us now, and most days that just means a bad
+            connection and a late reply. It has never once meant distance where it actually
+            matters.
+            <br /><br />
+            I've watched you build a whole life out there — sales by day, a Master's on the
+            side, and somehow still a camera, a sketchbook, or a lump of clay in your hands
+            whenever you get a quiet hour. You've always noticed things the rest of us walk
+            past. I think that's the artist in you, and I think it's also just{' '}
+            <em>you</em>.
+            <br /><br />
+            So this year, instead of one message that says "happy birthday" and disappears
+            into your notifications by Tuesday, I built you this. A few chapters. Take your
+            time with them — you always do everything else that way, and it's one of my
+            favourite things about you.
+            <br /><br />
+            Here's to twenty-six.
+          </p>
+          <p className="signature">With all of it — Ariba</p>
+        </div>
       </motion.div>
     </section>
   );

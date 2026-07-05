@@ -1,49 +1,82 @@
 #letter-section {
-  padding: 100px 10%;
-  background: #fff8e1; /* cream paper-like */
-  color: #473400;
-  font-family: 'Caveat', cursive;
+  position: relative;
+  padding: clamp(90px, 14vh, 160px) 20px;
   display: flex;
   justify-content: center;
+  background: var(--paper);
+  overflow: hidden;
 }
 
-.letter-container {
-  max-width: 700px;
-  background: #fffbe6; /* slightly lighter paper */
-  padding: 40px 50px;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  position: relative;
-  line-height: 1.8;
-  font-size: 1.3rem;
-}
-
-.letter-container::before {
-  content: "";
+.letter-backdrop {
   position: absolute;
-  top: 5px;
-  left: 5px;
-  right: 5px;
-  bottom: 5px;
-  border: 1px dashed #ffd966;
-  border-radius: 15px;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 40% at 50% 0%, var(--gold-soft), transparent 70%);
   pointer-events: none;
 }
 
-#letter-section h2 {
-  font-family: 'Dancing Script', cursive;
-  font-size: 3rem;
-  margin-bottom: 30px;
+.letter-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.2); /* subtle ink effect */
 }
 
-.letter-container p {
+.letter-eyebrow {
+  margin-bottom: 14px;
+}
+
+.letter-title {
+  font-size: var(--step-h2);
+  margin-bottom: clamp(36px, 6vh, 64px);
+}
+
+.letter-page {
+  width: 100%;
+  background: var(--paper-panel);
+  padding: clamp(36px, 6vw, 72px) clamp(28px, 8vw, 76px);
+  box-shadow:
+    0 2px 0 rgba(255, 255, 255, 0.6) inset,
+    0 24px 60px -20px var(--shadow-soft),
+    0 1px 0 var(--line);
+  border: 1px solid var(--line);
+  text-align: left;
+  position: relative;
+}
+
+.letter-page::before {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border: 1px solid var(--line);
+  pointer-events: none;
+}
+
+.letter-body {
+  font-family: var(--font-hand);
+  font-size: clamp(1.35rem, 1.1rem + 1vw, 1.75rem);
+  line-height: 1.55;
+  color: var(--ink);
+  font-weight: 500;
   white-space: pre-line;
 }
 
-.signature {
+.letter-body em {
+  font-style: italic;
+  color: var(--gold-deep);
+}
+
+.letter-page .signature {
+  display: block;
+  margin-top: clamp(28px, 5vh, 48px);
   text-align: right;
-  margin-top: 40px;
-  font-size: 1.5rem;
+}
+
+@media (max-width: 560px) {
+  .letter-body {
+    font-size: 1.3rem;
+  }
 }

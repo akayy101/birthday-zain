@@ -1,62 +1,154 @@
 #memory-section {
-  padding: 80px 5%;
-  background: #fff6e6;
-  text-align: center;
-  color: #473400;
+  padding: clamp(80px, 12vh, 140px) 0;
+  background: var(--paper);
 }
 
-#memory-section h2 {
-  font-family: 'Dancing Script', cursive;
-  font-size: 2.8rem;
-  margin-bottom: 40px;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+.memory-head {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: clamp(48px, 8vh, 76px);
+}
+
+.memory-head .eyebrow {
+  margin-bottom: 14px;
+}
+
+.memory-sub {
+  margin-top: 18px;
+  color: var(--ink-soft);
+  font-size: var(--step-lead);
 }
 
 .memory-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
-  justify-content: center;
 }
 
-.memory-box {
-  background: #ffefb3;
-  border-radius: 15px;
-  padding: 20px;
+.memory-card {
+  background: var(--paper-panel);
+  border: 1px solid var(--line);
+  padding: 28px 24px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  text-align: center;
-  font-family: 'Caveat', cursive;
-  width: 200px;           /* fixed width for all cards */
-  min-height: 150px;      /* all closed cards same height */
+  height: 190px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 10px 26px -14px var(--shadow-soft);
+  position: relative;
   overflow: hidden;
-  vertical-align: top;    /* ensures top alignment */
-  display: inline-block;  /* each card independent */
 }
 
+.memory-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.12;
+}
 
-.memory-box h3 {
-  margin-bottom: 10px;
-  font-size: 1.3rem;
+.memory-card.tone-1::before { background: linear-gradient(160deg, var(--gold), transparent 65%); }
+.memory-card.tone-2::before { background: linear-gradient(160deg, var(--olive), transparent 65%); }
+.memory-card.tone-3::before { background: linear-gradient(160deg, var(--ember), transparent 65%); }
+.memory-card.tone-4::before { background: linear-gradient(160deg, var(--gold-deep), transparent 65%); }
+
+.memory-card.is-prompt {
+  background: transparent;
+  border-style: dashed;
+  box-shadow: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.memory-card.is-prompt::before {
+  display: none;
+}
+
+.memory-card.is-prompt h3 {
+  font-style: italic;
+  color: var(--ink-faint);
+  font-size: var(--step-lead);
+}
+
+.memory-card h3 {
+  position: relative;
+  font-size: var(--step-h3);
+  line-height: 1.2;
+}
+
+.memory-hint {
+  position: relative;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--olive);
+}
+
+.memory-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: rgba(30, 20, 8, 0.55);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.memory-card--expanded {
+  width: min(560px, 100%);
+  height: auto;
+  cursor: default;
+  padding: 36px;
+  box-shadow: 0 40px 90px -20px var(--shadow-deep);
+}
+
+.memory-card--expanded h3 {
+  font-size: var(--step-h2);
+  margin-bottom: 4px;
+}
+
+.memory-close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  line-height: 1;
+  color: var(--ink-soft);
+  z-index: 2;
+}
+
+.memory-close:hover {
+  color: var(--ink);
+}
+
+.memory-media {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 1px solid var(--line);
+}
+
+.memory-media--placeholder {
+  background: linear-gradient(150deg, var(--paper-deep), var(--gold-soft));
 }
 
 .memory-content {
-  margin-top: 10px;
+  margin-top: 16px;
+  font-size: var(--step-lead);
+  color: var(--ink-soft);
+  line-height: 1.6;
 }
 
-.memory-content img,
-.memory-content video {
-  max-width: 100%;
-  border-radius: 10px;
-  margin-bottom: 10px;
-}
-
-.memory-box:hover {
-  transform: scale(1.03);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
-
-.memory-box.open {
-  background: #ffd966;
-  min-height: unset; /* allows it to grow to fit content */
+@media (max-width: 540px) {
+  .memory-card:not(.memory-card--expanded) {
+    height: 150px;
+  }
 }

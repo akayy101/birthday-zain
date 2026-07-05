@@ -1,111 +1,111 @@
 #game-section {
-  padding: 80px 5%;
-  background: #fff8e1;
+  position: relative;
+  padding: clamp(90px, 13vh, 150px) 0;
+  background: var(--paper);
+}
+
+.game-head {
   text-align: center;
-  color: #473400;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: clamp(48px, 8vh, 76px);
 }
 
-#game-section h2 {
-  font-family: 'Dancing Script', cursive;
-  font-size: 2.8rem;
-  margin-bottom: 50px;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+.game-head .eyebrow {
+  margin-bottom: 14px;
 }
 
-.question-card, .result-card {
-  max-width: 600px;
-  margin: auto;
-  background: #fffbe6;
-  border-radius: 15px;
-  padding: 40px 30px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  font-family: 'Caveat', cursive;
+.game-sub {
+  margin-top: 18px;
+  color: var(--ink-soft);
+  font-size: var(--step-lead);
+}
+
+.question-card,
+.result-card {
+  max-width: 560px;
+  margin: 0 auto;
+  background: var(--paper-panel);
+  border: 1px solid var(--line);
+  padding: clamp(32px, 5vw, 52px);
+  box-shadow: 0 20px 44px -20px var(--shadow-soft);
+  text-align: center;
+}
+
+.question-progress {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--olive);
+  margin-bottom: 18px;
 }
 
 .question {
-  font-size: 1.5rem;
-  margin-bottom: 30px;
+  font-family: var(--font-display);
+  font-size: var(--step-h3);
+  line-height: 1.3;
+  margin-bottom: 32px;
 }
 
 .options {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 12px;
 }
 
 .option-btn {
-  padding: 15px;
-  font-size: 1.2rem;
-  border-radius: 10px;
-  border: 2px solid #ffd966;
-  background: #ffefb3;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  padding: 15px 18px;
+  font-size: 1rem;
+  border: 1.5px solid var(--line-strong);
+  background: var(--paper);
+  color: var(--ink);
+  transition: border-color 0.3s var(--ease-soft), background 0.3s var(--ease-soft), transform 0.3s var(--ease-soft);
 }
 
 .option-btn:hover:not(:disabled) {
-  transform: scale(1.05);
+  border-color: var(--gold-deep);
+  transform: translateY(-2px);
 }
 
 .option-btn.correct {
-  background: #ffd966;
-  border-color: #ffb700;
+  background: var(--gold-soft);
+  border-color: var(--gold-deep);
+  color: var(--gold-deep);
+  font-weight: 600;
 }
 
 .option-btn.wrong {
-  background: #f4b400;
-  border-color: #e59400;
+  border-color: var(--ember);
+  color: var(--ember);
 }
 
 .option-btn:disabled {
   cursor: not-allowed;
 }
 
-/* Replay button */
+.result-card h3 {
+  font-size: var(--step-h1);
+  font-variant-numeric: tabular-nums;
+  color: var(--gold-deep);
+  margin: 10px 0 18px;
+}
+
+.result-card p {
+  color: var(--ink-soft);
+  font-size: var(--step-lead);
+  max-width: 40ch;
+  margin: 0 auto;
+}
+
 .replay-btn {
-  margin-top: 20px;
-  padding: 12px 25px;
-  font-size: 1.2rem;
-  border-radius: 10px;
-  border: 2px solid #ffd966;
-  background: #ffefb3;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  margin-top: 26px;
 }
 
-.replay-btn:hover {
-  background: #ffd966;
-  border-color: #ffb700;
-  transform: scale(1.05);
-}
-
-/* Confetti animation */
-.confetti {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
+.gold-confetti-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
   pointer-events: none;
-}
-
-.confetti span {
-  position: absolute;
-  display: block;
-  width: 10px;
-  height: 10px;
-  background: #ffd966;
-  border-radius: 50%;
-  animation: fall 3s linear infinite;
-  top: -10px;
-  left: calc(50% - 5px);
-  opacity: 0.7;
-}
-
-.confetti span:nth-child(odd) { background: #ffb700; }
-.confetti span:nth-child(even) { background: #ffe066; }
-
-@keyframes fall {
-  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-  100% { transform: translateY(400px) rotate(360deg); opacity: 0; }
 }
