@@ -143,6 +143,18 @@
   padding: 10px 26px;
 }
 
+.play-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  border-color: var(--line-strong);
+  color: var(--ink-faint);
+}
+
+.play-btn:disabled:hover {
+  background: transparent;
+  box-shadow: none;
+}
+
 .record-shelf {
   display: flex;
   flex-direction: column;

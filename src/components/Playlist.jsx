@@ -2,14 +2,14 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import '../assets/css/Playlist.css';
+import friendsTheme from '../assets/audios/I ll Be There For You (Friends Theme Song).mp3';
+import tereJaisa from '../assets/audios/Tere Jaisa Yaar Kahan (Lyrical Video) Kishore Kumar Amitabh Bachchan Yaarana.mp3';
+import dosti from '../assets/audios/Dosti (Cover) Jawad Ahmad [qcP-7SbYA0U].mp3';
 
-// TODO(ariba): replace with his actual playlist — title, artist, and a real
-// audio file/link per track. These SoundHelix tracks are functional stand-ins
-// so the record player works end to end while you gather the real songs.
 const tracks = [
-  { title: 'Track One', artist: 'swap me', audio: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3' },
-  { title: 'Track Two', artist: 'swap me', audio: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3' },
-  { title: 'Track Three', artist: 'swap me', audio: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3' },
+  { title: "I'll Be There for You", artist: 'The Rembrandts', audio: friendsTheme },
+  { title: 'Tere Jaisa Yaar Kahan', artist: 'Kishore Kumar', audio: tereJaisa },
+  { title: 'Dosti', artist: 'Jawad Ahmad (cover)', audio: dosti },
 ];
 
 const Playlist = () => {
@@ -18,12 +18,13 @@ const Playlist = () => {
   const audioRef = useRef(null);
 
   const current = tracks[currentIndex];
+  const hasAudio = Boolean(current.audio);
 
   useEffect(() => {
-    if (isPlaying) {
+    if (isPlaying && hasAudio) {
       audioRef.current?.play().catch(() => {});
     }
-  }, [currentIndex, isPlaying]);
+  }, [currentIndex, isPlaying, hasAudio]);
 
   const selectTrack = (index) => {
     if (index === currentIndex) {
@@ -31,10 +32,11 @@ const Playlist = () => {
       return;
     }
     setCurrentIndex(index);
-    setIsPlaying(true);
+    setIsPlaying(Boolean(tracks[index].audio));
   };
 
   const togglePlay = () => {
+    if (!hasAudio) return;
     if (isPlaying) {
       audioRef.current?.pause();
       setIsPlaying(false);
@@ -75,8 +77,8 @@ const Playlist = () => {
           <div className="now-playing">
             <p className="now-playing-title">{current.title}</p>
             <p className="now-playing-artist">{current.artist}</p>
-            <button className="btn-gold play-btn" onClick={togglePlay}>
-              {isPlaying ? 'Pause' : 'Play'}
+            <button className="btn-gold play-btn" onClick={togglePlay} disabled={!hasAudio}>
+              {!hasAudio ? 'Audio coming soon' : isPlaying ? 'Pause' : 'Play'}
             </button>
           </div>
         </div>
@@ -95,11 +97,13 @@ const Playlist = () => {
         </div>
       </div>
 
-      <audio
-        ref={audioRef}
-        src={current.audio}
-        onEnded={() => setIsPlaying(false)}
-      />
+      {hasAudio && (
+        <audio
+          ref={audioRef}
+          src={current.audio}
+          onEnded={() => setIsPlaying(false)}
+        />
+      )}
     </section>
   );
 };
