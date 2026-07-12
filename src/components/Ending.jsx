@@ -27,12 +27,11 @@ const Ending = () => {
       >
         <motion.p className="ending-line" variants={lineVariants}>
           If you've read this far, you already know this was never really about
-          turning twenty-six.
+          celebrating a birthday.
         </motion.p>
         <motion.p className="ending-line" variants={lineVariants}>
-          It's about six years of you being annoyingly consistent — showing up,
-          listening all the way through, never turning any of it into a bigger
-          deal than it needed to be. Someone should probably mention that.
+          It's about six years of you being annoying, consistent, showing up,
+          listening all the way through, never turning any of it into a bigger deal than it needed to be.
         </motion.p>
         <motion.p className="signature ending-signature" variants={lineVariants}>
           — Ariba
@@ -46,7 +45,7 @@ const Ending = () => {
         viewport={{ once: true, amount: 0.6 }}
         transition={{ duration: 2.4, ease: 'easeOut' }}
       >
-        <p>Thank you for existing.</p>
+        <p>Thank you for everything!</p>
       </motion.div>
     </section>
   );

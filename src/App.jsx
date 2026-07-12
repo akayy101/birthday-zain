@@ -15,8 +15,6 @@ function App() {
       <Hero />
       <Letter />
       <Gallery />
-      <MemoryBoxes />
-      <Poetry />
       <Playlist />
       <Game />
       <Interlude />
