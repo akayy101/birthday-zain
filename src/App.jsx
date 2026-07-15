@@ -2,7 +2,7 @@ import React from 'react';
 import Hero from './components/Hero';
 import Letter from './components/Letter';
 import Gallery from './components/Gallery';
-import MemoryBoxes from './components/MemoryBoxes';
+import LifeObjects from './components/LifeObjects';
 import Poetry from './components/Poetry';
 import Playlist from './components/Playlist';
 import Game from './components/Game';
@@ -15,6 +15,7 @@ function App() {
       <Hero />
       <Letter />
       <Gallery />
+      <LifeObjects />
       <Playlist />
       <Game />
       <Interlude />
