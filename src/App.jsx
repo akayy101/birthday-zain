@@ -1,8 +1,7 @@
 import React from 'react';
 import Hero from './components/Hero';
 import Letter from './components/Letter';
-import Gallery from './components/Gallery';
-import LifeObjects from './components/LifeObjects';
+import Slideshow from './components/Slideshow';
 import Poetry from './components/Poetry';
 import Playlist from './components/Playlist';
 import Game from './components/Game';
@@ -14,8 +13,7 @@ function App() {
     <div>
       <Hero />
       <Letter />
-      <Gallery />
-      <LifeObjects />
+      <Slideshow />
       <Playlist />
       <Game />
       <Interlude />
