@@ -23,23 +23,16 @@ const Letter = () => {
             <br /><br />
             Six years ago you were just a friend. Somewhere along the way, without either
             of us really deciding it, you became the closest thing I have to an elder
-            brother — the one who stays calm when I'm not, who listens all the way through
-            before saying anything back.
+            brother — the one who has always had my back.
             <br /><br />
+            Sometimes I cant believe how far have we come despite all the challenges and problems we have had.
+            Thanks to me for having such a big heart. So much has changed since then, and yet, in some ways, nothing has changed at all. You are still the person I confide in, the one I can be honest with, and the one who has always been there for me. Thankyou for always being my safe space.
             There's an entire country between us now, and most days that just means a bad
             connection and a late reply. It has never once meant distance where it actually
             matters.
             <br /><br />
-            I've watched you build a whole life out there — sales by day, a Master's on the
-            side, and somehow still a camera, a sketchbook, or a lump of clay in your hands
-            whenever you get a quiet hour. You've always noticed things the rest of us walk
-            past. I think that's the artist in you, and I think it's also just{' '}
-            <em>you</em>.
-            <br /><br />
-            So this year, instead of one message that says "happy birthday" and disappears
-            into your notifications by Tuesday, I built you this. A few chapters. Take your
-            time with them — you always do everything else that way, and it's one of my
-            favourite things about you.
+            So this year, instead of one message that says "happy birthday" and disappears, I built you this. A few chapters. Take your
+            time with them.
             <br /><br />
             Here's to twenty-six.
           </p>
