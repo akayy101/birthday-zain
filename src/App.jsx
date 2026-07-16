@@ -16,7 +16,6 @@ function App() {
       <Slideshow />
       <Playlist />
       <Game />
-      <Interlude />
       <Ending />
     </div>
   );

@@ -14,7 +14,7 @@ const Interlude = () => {
         viewport={{ once: true, amount: 0.6 }}
         transition={{ duration: 2.2, ease: 'easeOut' }}
       >
-        But the real memories were never a quiz.
+      
       </motion.p>
     </section>
   );

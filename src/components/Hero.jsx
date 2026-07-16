@@ -1,7 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import '../assets/css/Hero.css';
-import cakeImg from '../assets/images/cake.jpg';
 import birthdaySong from '../assets/audios/birthday.mp3';
 
 const Hero = () => {
@@ -19,13 +18,6 @@ const Hero = () => {
       <div className="hero-glow" aria-hidden="true" />
       <div className="hero-vignette" aria-hidden="true" />
 
-      <motion.div
-        className="hero-cake"
-        animate={{ y: [0, -16, 0] }}
-        transition={{ repeat: Infinity, duration: 5, ease: 'easeInOut' }}
-      >
-        <img src={cakeImg} alt="" />
-      </motion.div>
 
       <div className="hero-content">
         <motion.span

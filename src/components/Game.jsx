@@ -5,20 +5,31 @@ import '../assets/css/Game.css';
 // these three are already real memories, just restyled.
 const questions = [
   {
-    question: 'Which city did we go to for our impromptu trip?',
-    options: ['Sargodha', 'Lahore', 'Karachi', 'Berlin'],
-    answer: 'Sargodha',
+    question: 'How many girls have you played with?',
+    options: ['One', 'Two', 'Four', 'Ive lost count'],
+    answer: 'Ive lost count',
   },
   {
-    question: 'What happened during our football game in the rain?',
-    options: ['You scored a goal', 'You slipped into the mud', 'We won', 'The ball burst'],
-    answer: 'You slipped into the mud',
+    question: 'How many times have you asked for my forgiveness?',
+    options: ['Two', 'Three', 'Four', 'Ive lost count'],
+    answer: 'Ive lost count',
   },
   {
-    question: 'What did that pottery class end up producing?',
-    options: ['A perfect bowl', 'A ‘unique’ vase', 'Nothing at all', 'A mug'],
-    answer: 'A ‘unique’ vase',
+    question: 'How many times have you cried in front of me?',
+    options: ['Three', 'Four', 'Five', 'Ive lost count'],
+    answer: 'Ive lost count',
   },
+  {
+    question: 'How many trips have we made together?',
+    options: ['Three', 'Four', 'Five', 'Ive lost count'],
+    answer: 'Three',
+  },
+  {
+    question: 'If I would have to describe you what work would I use?',
+    options: ['Amazing', 'Annoying', 'Honest', 'Reliable'],
+    answer: 'Reliable',
+  },
+  
 ];
 
 const GoldConfetti = () => {
@@ -130,7 +141,7 @@ const Game = () => {
       <div className="container game-head">
         <span className="eyebrow">Chapter Seven</span>
         <h2 className="chapter-heading">Guess the <em>Memory</em></h2>
-        <p className="game-sub">Let's see how well you remember your own life.</p>
+        <p className="game-sub">Let's see how good is your memory</p>
       </div>
 
       <div className="container">
@@ -166,8 +177,8 @@ const Game = () => {
             <h3>{score} / {questions.length}</h3>
             <p>
               {score === questions.length
-                ? 'You know him better than he gives you credit for.'
-                : "Close enough — some of these only he'd remember perfectly."}
+                ? 'You dont have a goldfish memory.'
+                : "Close enough"}
             </p>
             <button className="btn-gold replay-btn" onClick={handleReplay}>Play again</button>
           </div>
