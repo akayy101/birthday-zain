@@ -2,16 +2,54 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import '../assets/css/Slideshow.css';
+import pic1 from '../assets/images/pic1.jpg';
+import pic2 from '../assets/images/pic2.jpg';
+import pic3 from '../assets/images/pic3.jpg';
+import pic4 from '../assets/images/pic4.jpg';
+import pic5 from '../assets/images/pic5.jpg';
+import pic6 from '../assets/images/pic6.jpg';
+import pic7 from '../assets/images/pic7.jpg';
+import pic8 from '../assets/images/pic8.jpg';
+import pic9 from '../assets/images/pic9.jpg';
+import pic10 from '../assets/images/pic10.jpg';
+import pic11 from '../assets/images/pic11.jpg';
+import pic12 from '../assets/images/pic12.jpg';
+import pic13 from '../assets/images/pic13.jpg';
+import pic14 from '../assets/images/pic14.jpg';
+import pic15 from '../assets/images/pic15.jpg';
+import pic16 from '../assets/images/pic16.jpg';
+import pic17 from '../assets/images/pic17.jpg';
+import pic18 from '../assets/images/pic18.jpg';
+import pic19 from '../assets/images/pic19.jpg';
+import pic20 from '../assets/images/pic20.jpg';
+import pic21 from '../assets/images/pic21.jpg';
 
 // TODO(ariba): replace `image` with a real photo path per slide (import it at
 // the top of this file), and swap the caption for the real one. Add or remove
 // slides freely — everything below adapts to however many there are.
 const slides = [
-  { id: 1, image: null, caption: 'Somewhere in Germany, mid-frame, unaware he’s the subject.' },
-  { id: 2, image: null, caption: 'The kind of quiet he’s always been good at.' },
-  { id: 3, image: null, caption: 'Six years in, and still the same steady presence.' },
-  { id: 4, image: null, caption: 'Yellow, without even trying.' },
-  { id: 5, image: null, caption: 'This one’s just a placeholder — swap it whenever you like.' },
+  { id: 1, image: pic1, caption: 'Who thought this cute baby would be so annoying later?' },
+  { id: 2, image: pic2, caption: 'The kind of quiet he’s always been good at.' },
+  { id: 3, image: pic3, caption: 'Six years in, and still the same steady presence.' },
+  { id: 4, image: pic4, caption: 'Yellow, without even trying.' },
+  { id: 5, image: pic5, caption: 'This one’s just a placeholder — swap it whenever you like.' },
+  { id: 6, image: pic6, caption: 'Who thought this cute baby would be so annoying later?' },
+  { id: 7, image: pic7, caption: 'The kind of quiet he’s always been good at.' },
+  { id: 8, image: null, caption: 'Six years in, and still the same steady presence.' },
+  { id: 9, image: null, caption: 'Yellow, without even trying.' },
+  { id: 10, image: null, caption: 'This one’s just a placeholder — swap it whenever you like.' },
+  { id: 11, image: pic1, caption: 'Who thought this cute baby would be so annoying later?' },
+  { id: 12, image: null, caption: 'The kind of quiet he’s always been good at.' },
+  { id: 13, image: null, caption: 'Six years in, and still the same steady presence.' },
+  { id: 14, image: null, caption: 'Yellow, without even trying.' },
+  { id: 15, image: null, caption: 'This one’s just a placeholder — swap it whenever you like.' },
+  { id: 16, image: pic1, caption: 'Who thought this cute baby would be so annoying later?' },
+  { id: 17, image: null, caption: 'The kind of quiet he’s always been good at.' },
+  { id: 18, image: null, caption: 'Six years in, and still the same steady presence.' },
+  { id: 19, image: null, caption: 'Yellow, without even trying.' },
+  { id: 20, image: null, caption: 'This one’s just a placeholder — swap it whenever you like.' },
+  { id: 21, image: pic1, caption: 'Who thought this cute baby would be so annoying later?' },
+ 
 ];
 
 const SLIDE_DURATION = 6000;

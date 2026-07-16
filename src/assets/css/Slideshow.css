@@ -27,7 +27,7 @@
 .slideshow-frame-wrap {
   position: relative;
   width: 100%;
-  max-width: 760px;
+  max-width: 900px;
   padding: 0 clamp(8px, 4vw, 20px);
   display: flex;
   align-items: center;
