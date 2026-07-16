@@ -24,35 +24,34 @@ import pic19 from '../assets/images/pic19.jpg';
 import pic20 from '../assets/images/pic20.jpg';
 import pic21 from '../assets/images/pic21.jpg';
 
-// TODO(ariba): replace `image` with a real photo path per slide (import it at
-// the top of this file), and swap the caption for the real one. Add or remove
-// slides freely — everything below adapts to however many there are.
+// TODO(ariba): each slide is already one of your real photos — just edit the
+// caption to match what's actually in the picture. Add or remove slides
+// freely, portrait or landscape both display fully now.
 const slides = [
-  { id: 1, image: pic1, caption: 'Who thought this cute baby would be so annoying later?' },
+  { id: 1, image: pic1, caption: 'Somewhere in Germany, mid-frame, unaware he’s the subject.' },
   { id: 2, image: pic2, caption: 'The kind of quiet he’s always been good at.' },
   { id: 3, image: pic3, caption: 'Six years in, and still the same steady presence.' },
   { id: 4, image: pic4, caption: 'Yellow, without even trying.' },
-  { id: 5, image: pic5, caption: 'This one’s just a placeholder — swap it whenever you like.' },
-  { id: 6, image: pic6, caption: 'Who thought this cute baby would be so annoying later?' },
-  { id: 7, image: pic7, caption: 'The kind of quiet he’s always been good at.' },
-  { id: 8, image: null, caption: 'Six years in, and still the same steady presence.' },
-  { id: 9, image: null, caption: 'Yellow, without even trying.' },
-  { id: 10, image: null, caption: 'This one’s just a placeholder — swap it whenever you like.' },
-  { id: 11, image: pic1, caption: 'Who thought this cute baby would be so annoying later?' },
-  { id: 12, image: null, caption: 'The kind of quiet he’s always been good at.' },
-  { id: 13, image: null, caption: 'Six years in, and still the same steady presence.' },
-  { id: 14, image: null, caption: 'Yellow, without even trying.' },
-  { id: 15, image: null, caption: 'This one’s just a placeholder — swap it whenever you like.' },
-  { id: 16, image: pic1, caption: 'Who thought this cute baby would be so annoying later?' },
-  { id: 17, image: null, caption: 'The kind of quiet he’s always been good at.' },
-  { id: 18, image: null, caption: 'Six years in, and still the same steady presence.' },
-  { id: 19, image: null, caption: 'Yellow, without even trying.' },
-  { id: 20, image: null, caption: 'This one’s just a placeholder — swap it whenever you like.' },
-  { id: 21, image: pic1, caption: 'Who thought this cute baby would be so annoying later?' },
- 
+  { id: 5, image: pic5, caption: 'Caught between two moods, per usual.' },
+  { id: 6, image: pic6, caption: 'Older now, still unmistakably him.' },
+  { id: 7, image: pic7, caption: 'The calm that never seems to run out.' },
+  { id: 8, image: pic8, caption: 'Somewhere between a hobby and a whole personality.' },
+  { id: 9, image: pic9, caption: 'Unposed, which somehow suits him more.' },
+  { id: 10, image: pic10, caption: 'Every trip has one of these — this is his.' },
+  { id: 11, image: pic11, caption: 'Still the same laugh, six years later.' },
+  { id: 12, image: pic12, caption: 'Patience, in photographic form.' },
+  { id: 13, image: pic13, caption: 'This one didn’t need a caption. It’s getting one anyway.' },
+  { id: 14, image: pic14, caption: 'The version of him most people never see.' },
+  { id: 15, image: pic15, caption: 'Taken on an ordinary day that turned out to matter.' },
+  { id: 16, image: pic16, caption: 'Some things really don’t change.' },
+  { id: 17, image: pic17, caption: 'The eye behind most of the good photos, in front of one for once.' },
+  { id: 18, image: pic18, caption: 'Proof that calm is a look, not just a personality trait.' },
+  { id: 19, image: pic19, caption: 'Twenty-six looks a lot like twenty, just steadier.' },
+  { id: 20, image: pic20, caption: 'Kept for no reason other than liking it.' },
+  { id: 21, image: pic21, caption: 'The one we keep going back to.' },
 ];
 
-const SLIDE_DURATION = 6000;
+const SLIDE_DURATION = 7500;
 
 const Slideshow = () => {
   const [index, setIndex] = useState(0);
@@ -78,7 +77,7 @@ const Slideshow = () => {
       <div className="container slideshow-head">
         <span className="eyebrow">Chapter Two</span>
         <h2 className="chapter-heading">A Few <em>Frames</em></h2>
-        <p className="slideshow-sub">A handful of pictures, waiting for the real ones.</p>
+        <p className="slideshow-sub">A handful of pictures, worth sitting with for a moment.</p>
       </div>
 
       <div
@@ -86,39 +85,38 @@ const Slideshow = () => {
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
-        <button className="slide-arrow slide-arrow--prev" onClick={goPrev} aria-label="Previous picture">
-          ‹
-        </button>
-
         <div className="slideshow-frame">
           <AnimatePresence mode="wait">
             <motion.div
               key={current.id}
               className="slide"
-              initial={{ opacity: 0, scale: 1.04 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.98 }}
-              transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
             >
               {current.image ? (
-                <img src={current.image} alt={current.caption} className="slide-image" />
+                <motion.img
+                  src={current.image}
+                  alt={current.caption}
+                  className="slide-image"
+                  initial={{ scale: 1 }}
+                  animate={{ scale: 1.06 }}
+                  transition={{ duration: (SLIDE_DURATION + 1800) / 1000, ease: 'linear' }}
+                />
               ) : (
                 <div className="slide-image slide-image--placeholder" aria-hidden="true" />
               )}
             </motion.div>
           </AnimatePresence>
 
-          <div className="slide-progress" key={`progress-${current.id}`}>
-            <div
-              className={`slide-progress-fill ${isPaused ? 'is-paused' : ''}`}
-              style={{ '--slide-duration': `${SLIDE_DURATION}ms` }}
-            />
-          </div>
+          <button className="slide-arrow slide-arrow--prev" onClick={goPrev} aria-label="Previous picture">
+            ‹
+          </button>
+          <button className="slide-arrow slide-arrow--next" onClick={goNext} aria-label="Next picture">
+            ›
+          </button>
         </div>
-
-        <button className="slide-arrow slide-arrow--next" onClick={goNext} aria-label="Next picture">
-          ›
-        </button>
       </div>
 
       <AnimatePresence mode="wait">
