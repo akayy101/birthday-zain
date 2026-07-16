@@ -18,7 +18,6 @@ function App() {
       <LifeObjects />
       <Playlist />
       <Game />
-      <Interlude />
       <Ending />
     </div>
   );

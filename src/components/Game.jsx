@@ -141,7 +141,7 @@ const Game = () => {
       <div className="container game-head">
         <span className="eyebrow">Chapter Seven</span>
         <h2 className="chapter-heading">Guess the <em>Memory</em></h2>
-        <p className="game-sub">Let's see how well you remember your own life.</p>
+        <p className="game-sub">Let's see how good is your memory</p>
       </div>
 
       <div className="container">
@@ -177,8 +177,8 @@ const Game = () => {
             <h3>{score} / {questions.length}</h3>
             <p>
               {score === questions.length
-                ? 'You know him better than he gives you credit for.'
-                : "Close enough — some of these only he'd remember perfectly."}
+                ? 'You dont have a goldfish memory.'
+                : "Close enough"}
             </p>
             <button className="btn-gold replay-btn" onClick={handleReplay}>Play again</button>
           </div>
