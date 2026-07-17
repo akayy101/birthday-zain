@@ -28,27 +28,31 @@ import pic21 from '../assets/images/pic21.jpg';
 // caption to match what's actually in the picture. Add or remove slides
 // freely, portrait or landscape both display fully now.
 const slides = [
-  { id: 1, image: pic1, caption: 'Somewhere in Germany, mid-frame, unaware he’s the subject.' },
-  { id: 2, image: pic2, caption: 'The kind of quiet he’s always been good at.' },
-  { id: 3, image: pic3, caption: 'Six years in, and still the same steady presence.' },
-  { id: 4, image: pic4, caption: 'Yellow, without even trying.' },
-  { id: 5, image: pic5, caption: 'Caught between two moods, per usual.' },
-  { id: 6, image: pic6, caption: 'Older now, still unmistakably him.' },
-  { id: 7, image: pic7, caption: 'The calm that never seems to run out.' },
-  { id: 8, image: pic8, caption: 'Somewhere between a hobby and a whole personality.' },
-  { id: 9, image: pic9, caption: 'Unposed, which somehow suits him more.' },
-  { id: 10, image: pic10, caption: 'Every trip has one of these — this is his.' },
-  { id: 11, image: pic11, caption: 'Still the same laugh, six years later.' },
-  { id: 12, image: pic12, caption: 'Patience, in photographic form.' },
-  { id: 13, image: pic13, caption: 'This one didn’t need a caption. It’s getting one anyway.' },
-  { id: 14, image: pic14, caption: 'The version of him most people never see.' },
-  { id: 15, image: pic15, caption: 'Taken on an ordinary day that turned out to matter.' },
-  { id: 16, image: pic16, caption: 'Some things really don’t change.' },
-  { id: 17, image: pic17, caption: 'The eye behind most of the good photos, in front of one for once.' },
-  { id: 18, image: pic18, caption: 'Proof that calm is a look, not just a personality trait.' },
-  { id: 19, image: pic19, caption: 'Twenty-six looks a lot like twenty, just steadier.' },
-  { id: 20, image: pic20, caption: 'Kept for no reason other than liking it.' },
-  { id: 21, image: pic21, caption: 'The one we keep going back to.' },
+  { id: 1, image: pic1, caption: 'Always a mischievous energy' },
+  { id: 2, image: pic2, caption: 'Big supporter of Communication since 00' },
+  { id: 3, image: pic3, caption: 'Who is this cutie patootie?' },
+  { id: 4, image: pic4, caption: 'Butterfly effect' },
+  
+  { id: 6, image: pic6, caption: 'Most eligible Cadet!' },
+  { id: 7, image: pic7, caption: 'Glasses actually suit you' },
+  { id: 8, image: pic8, caption: 'The only cute picture we have' },
+  { id: 9, image: pic9, caption: 'Nvm I like this too' },
+  { id: 10, image: pic10, caption: 'Just another girl dying for you' },
+  { id: 5, image: pic5, caption: 'Achievement NO. 1' },
+  { id: 11, image: pic11, caption: 'Achievement No. 2' },
+  { id: 13, image: pic13, caption: 'Achievement No. 3' },
+  
+  { id: 13, image: pic13, caption: 'Achievement No. 3' },
+  { id: 14, image: pic14, caption: 'Cute cap' },
+  { id: 12, image: pic12, caption: 'Salesman pf the year pt1' },
+  { id: 15, image: pic15, caption: 'Salesman pf the year pt2' },
+  { id: 18, image: pic18, caption: 'Salesman pf the year pt3' },
+  { id: 16, image: pic16, caption: 'E memory from your favorite trip' },
+  { id: 17, image: pic17, caption: 'Tch Tch, presenting someone else\'s flowers' },
+  
+  { id: 19, image: pic19, caption: 'Calm before the storm (iykyk)' },
+  { id: 20, image: pic20, caption: 'Sleepy head' },
+  { id: 21, image: pic21, caption: 'One with catto' },
 ];
 
 const SLIDE_DURATION = 7500;

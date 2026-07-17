@@ -139,7 +139,7 @@ const Game = () => {
     <section id="game-section">
       {showConfetti && <GoldConfetti />}
       <div className="container game-head">
-        <span className="eyebrow">Chapter Seven</span>
+        <span className="eyebrow">Chapter Four</span>
         <h2 className="chapter-heading">Guess the <em>Memory</em></h2>
         <p className="game-sub">Let's see how good is your memory</p>
       </div>

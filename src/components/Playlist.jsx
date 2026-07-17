@@ -49,7 +49,7 @@ const Playlist = () => {
   return (
     <section id="playlist-section">
       <div className="container playlist-head">
-        <span className="eyebrow">Chapter Six</span>
+        <span className="eyebrow">Chapter Three</span>
         <h2 className="chapter-heading">Songs, <em>chosen for him</em></h2>
         <p className="playlist-sub">Pick a record. Only one plays at a time.</p>
       </div>
